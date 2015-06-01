@@ -17,6 +17,19 @@ describe 'App' do
     end
   end
 
+  it "doesn't render offers when the signature is invalid" do
+    VCR.use_cassette("offers_with_invalid_signature") do
+      travel_to Time.new(2015, 6, 1) do
+        visit '/'
+        fill_in 'offers_uid', with: 'player1'
+        fill_in 'offers_pub0', with: 'campaign2'
+        fill_in 'offers_page', with: '1'
+        click_button 'Search'
+        expect(page).to_not have_content 'Double Down Casino - Facebook App'
+      end
+    end
+  end
+
   it "renders a message when no offers" do
     VCR.use_cassette("no_offers") do
       travel_to Time.new(2015, 6, 1) do
