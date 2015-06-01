@@ -30,7 +30,7 @@ class Request
   end
 
   def hashkey
-    Digest::SHA1.hexdigest(request_params.to_a.sort { |a, b| a[0].to_s <=> b[0].to_s }.map { |pair| "#{pair[0]}=#{pair[1]}" }.join("&") + "&#{api_key}")
+    Digest::SHA1.hexdigest(request_params.sort_by { |key, _| key.to_s }.map { |pair| pair.join("=") }.join("&") + "&#{api_key}")
   end
 
   def api_key
