@@ -1,16 +1,22 @@
-<table>
-  <thead>
-    <th>Thumbnail</th>
-    <th>Title</th>
-    <th>Payout</th>
-  </thead>
-  <tbody>
-    <%= @offers.each do |offer| %>
-      <tr>
-        <td><img src="<%= offer['thumbnail']['lowres'] %>" /></td>
-        <td><%= offer['title'] %></td>
-        <td><%= offer['payout'] %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
+<h1>Offers</h1>
+
+<% if @offers.any? %>
+  <table>
+    <thead>
+      <th>Thumbnail</th>
+      <th>Title</th>
+      <th>Payout</th>
+    </thead>
+    <tbody>
+      <%= @offers.each do |offer| %>
+        <tr>
+          <td><img src="<%= offer['thumbnail']['lowres'] %>" /></td>
+          <td><%= offer['title'] %></td>
+          <td><%= offer['payout'] %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+<% else %>
+  <p>No offers available</p>
+<% end %>
