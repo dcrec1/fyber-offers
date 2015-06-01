@@ -1,0 +1,17 @@
+<h1>Search offers</h1>
+
+<%= form_for :offers, url: offers_url, method: :get do |f| %>
+  <div>
+    <%= f.label :uid %>
+    <%= f.text_field :uid %>
+  </div>
+  <div>
+    <%= f.label :pub0 %>
+    <%= f.text_field :pub0 %>
+  </div>
+  <div>
+    <%= f.label :page %>
+    <%= f.text_field :page %>
+  </div>
+  <%= f.submit 'Search' %>
+<% end %>

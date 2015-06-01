@@ -1,0 +1,16 @@
+<table>
+  <thead>
+    <th>Thumbnail</th>
+    <th>Title</th>
+    <th>Payout</th>
+  </thead>
+  <tbody>
+    <%= @offers.each do |offer| %>
+      <tr>
+        <td><img src="<%= offer['thumbnail']['lowres'] %>" /></td>
+        <td><%= offer['title'] %></td>
+        <td><%= offer['payout'] %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
