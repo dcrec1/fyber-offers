@@ -4,14 +4,22 @@ class Request
   end
 
   def valid?
-    Digest::SHA1.hexdigest("#{response}#{api_key}") == response.headers[:x_sponsorpay_response_signature]
+    to_hash['code'] == "OK" and valid_signature?
   end
+
+  def to_hash
+    @json ||= JSON.parse(response)
+  end
+
+  private
 
   def response
     @response ||= RestClient.get("http://api.sponsorpay.com/feed/v1/offers.json", params: all_params)
   end
 
-  private
+  def valid_signature?
+    Digest::SHA1.hexdigest("#{response}#{api_key}") == response.headers[:x_sponsorpay_response_signature]
+  end
 
   def all_params
     request_params.merge hashkey: hashkey

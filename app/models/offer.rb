@@ -1,6 +1,6 @@
 class Offer
   def self.all(params)
     request = Request.new params
-    request.valid? ? JSON.parse(request.response)['offers'] : []
+    request.valid? ? request.to_hash['offers'] : []
   end
 end

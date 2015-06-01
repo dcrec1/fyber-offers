@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.sponsorpay.com/feed/v1/offers.json?appid=157&apple_idfa_tracking_enabled=false&device_id=2b6f0cc904d137be2e1730235f5664094b83&hashkey=fe8c65964a359a1a4a73930d07ef49fd0bbc6ac5&idfa=2E7CE4B3-F68A-44D9-A923-F4E48D92B31E&ip=109.235.143.113&locale=de&offer_types=112&os_version=6.0&page=2&pub0=campaign2&timestamp=1433127600&uid=player1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=utf-8
+      Status:
+      - 200 OK
+      P3p:
+      - CP="NON DSP COR CURa IVAa IVDa CONa OUR NOR STA"
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Fri, 01 Jan 1990 00:00:00 GMT
+      X-Sponsorpay-Response-Signature:
+      - dc98e92baf5311dfd22c0c5fe518e284a7289b92
+      X-Sponsorpay-Response-Code:
+      - ERROR_INVALID_PAGE
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Etag:
+      - '"1fec1620ac8c33bbd688decd00936efb"'
+      X-Runtime:
+      - '0.692442'
+      Date:
+      - Mon, 01 Jun 2015 23:45:26 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.53
+      Server:
+      - nginx + Phusion Passenger 4.0.53
+      X-Cache:
+      - MISS from localhost
+      X-Cache-Lookup:
+      - MISS from localhost:3128
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 localhost (squid/3.3.10)
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":"ERROR_INVALID_PAGE","message":"A non-existing page was requested
+        with the parameter page."}'
+    http_version: 
+  recorded_at: Mon, 01 Jun 2015 03:00:00 GMT
+recorded_with: VCR 2.9.3
