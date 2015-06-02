@@ -1,17 +1,21 @@
-class Request
+class Search
   def initialize(params)
     @params = params
   end
 
-  def valid?
-    to_hash['code'] == "OK" and valid_signature?
-  end
-
-  def to_hash
-    @json ||= JSON.parse(response)
+  def results
+    valid? ? json['offers'] : []
   end
 
   private
+
+  def valid?
+    json['code'] == "OK" and valid_signature?
+  end
+
+  def json
+    @json ||= JSON.parse(response)
+  end
 
   def response
     @response ||= RestClient.get("http://api.sponsorpay.com/feed/v1/offers.json", params: all_params)
@@ -45,4 +49,3 @@ class Request
     Rails.application.secrets.fyber['api_key']
   end
 end
-
