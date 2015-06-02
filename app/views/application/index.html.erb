@@ -3,15 +3,15 @@
 <%= form_for :offers, url: offers_url, method: :get do |f| %>
   <div>
     <%= f.label :uid %>
-    <%= f.text_field :uid %>
+    <%= f.text_field :uid, required: true %>
   </div>
   <div>
     <%= f.label :pub0 %>
-    <%= f.text_field :pub0 %>
+    <%= f.text_field :pub0, required: true %>
   </div>
   <div>
     <%= f.label :page %>
-    <%= f.text_field :page %>
+    <%= f.text_field :page, required: true %>
   </div>
   <%= f.submit 'Search' %>
 <% end %>

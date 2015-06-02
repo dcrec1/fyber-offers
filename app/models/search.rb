@@ -10,7 +10,7 @@ class Search
   private
 
   def valid?
-    json['code'] == "OK" and valid_signature?
+    response and json['code'] == "OK" and valid_signature?
   end
 
   def json
@@ -18,7 +18,11 @@ class Search
   end
 
   def response
-    @response ||= RestClient.get("http://api.sponsorpay.com/feed/v1/offers.json", params: all_params)
+    @response ||= begin
+      RestClient.get("http://api.sponsorpay.com/feed/v1/offers.json", params: all_params)
+    rescue RestClient::BadRequest
+      nil
+    end
   end
 
   def valid_signature?

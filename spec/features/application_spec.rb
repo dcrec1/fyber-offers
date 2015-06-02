@@ -55,4 +55,14 @@ describe 'App' do
       end
     end
   end
+
+  it "doesnt break when no params" do
+    VCR.use_cassette("no_offers_no_params") do
+      travel_to Time.new(2015, 6, 1) do
+        visit '/'
+        click_button 'Search'
+        expect(status_code).to be 200
+      end
+    end
+  end
 end

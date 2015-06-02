@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://api.sponsorpay.com/feed/v1/offers.json?appid=157&apple_idfa_tracking_enabled=false&device_id=2b6f0cc904d137be2e1730235f5664094b83&hashkey=137496013a75032127bf9d52dd3445ea9fa3cab3&idfa=2E7CE4B3-F68A-44D9-A923-F4E48D92B31E&ip=109.235.143.113&locale=de&offer_types=112&os_version=6.0&page=&pub0=&timestamp=1433127600&uid=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Content-Type:
+      - application/json
+      Status:
+      - 400 Bad Request
+      X-Runtime:
+      - '0.000416'
+      Date:
+      - Tue, 02 Jun 2015 00:20:54 GMT
+      X-Rack-Cache:
+      - miss
+      X-Powered-By:
+      - Phusion Passenger 4.0.53
+      Server:
+      - nginx + Phusion Passenger 4.0.53
+      X-Cache:
+      - MISS from localhost
+      X-Cache-Lookup:
+      - MISS from localhost:3128
+      Transfer-Encoding:
+      - chunked
+      Via:
+      - 1.1 localhost (squid/3.3.10)
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '{"code":"ERROR_INVALID_UID","message":"An invalid user id (uid) was
+        given as a parameter in the request."}'
+    http_version: 
+  recorded_at: Mon, 01 Jun 2015 03:00:00 GMT
+recorded_with: VCR 2.9.3
