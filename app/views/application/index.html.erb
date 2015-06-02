@@ -1,17 +1,17 @@
 <h1>Search offers</h1>
 
 <%= form_for :offers, url: offers_url, method: :get do |f| %>
-  <div>
+  <div class="form-group">
     <%= f.label :uid %>
-    <%= f.text_field :uid, required: true %>
+    <%= f.text_field :uid, required: true, class: 'form-control' %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :pub0 %>
-    <%= f.text_field :pub0, required: true %>
+    <%= f.text_field :pub0, required: true, class: 'form-control' %>
   </div>
-  <div>
+  <div class="form-group">
     <%= f.label :page %>
-    <%= f.text_field :page, required: true %>
+    <%= f.text_field :page, required: true, class: 'form-control' %>
   </div>
   <%= f.submit 'Search' %>
 <% end %>

@@ -1,9 +1,9 @@
-<%= link_to 'Home', root_url %>
+<%= link_to 'Home', root_url, class: "btn btn-primary" %>
 
 <h1>Offers</h1>
 
 <% if @offers.any? %>
-  <table>
+  <table class="table table-striped">
     <thead>
       <th>Thumbnail</th>
       <th>Title</th>
