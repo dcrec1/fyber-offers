@@ -1,3 +1,5 @@
+<%= link_to 'Home', root_url %>
+
 <h1>Offers</h1>
 
 <% if @offers.any? %>
@@ -8,7 +10,7 @@
       <th>Payout</th>
     </thead>
     <tbody>
-      <%= @offers.each do |offer| %>
+      <%- @offers.each do |offer| %>
         <tr>
           <td><img src="<%= offer['thumbnail']['lowres'] %>" /></td>
           <td><%= offer['title'] %></td>
